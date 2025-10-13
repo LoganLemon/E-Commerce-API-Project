@@ -1,0 +1,41 @@
+# ============================
+# Python / FastAPI
+# ============================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.env
+venv/
+.env
+.env.*
+
+# ============================
+# Node / React (Vite)
+# ============================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.DS_Store
+frontend/package-lock.json
+
+# ============================
+# System / Editor Files
+# ============================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ============================
+# Test / Build Artifacts
+# ============================
+*.coverage
+.pytest_cache/
+dist/
+build/
