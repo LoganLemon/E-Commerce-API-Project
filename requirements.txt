@@ -2,7 +2,11 @@ fastapi
 uvicorn
 sqlalchemy
 pydantic
+pydantic[email]
+stripe
+python-dotenv
 bcrypt
 python-jose[cryptography]
+passlib[bcrypt]
 pytest
 pytest-asyncio
