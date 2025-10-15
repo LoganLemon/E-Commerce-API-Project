@@ -9,7 +9,6 @@ A full-stack e-commerce solution built with FastAPI and React, featuring user au
 - **Frontend**: React with Vite
 - **Authentication**: JWT-based with secure token handling
 - **Payments**: Stripe integration
-- **Testing**: Comprehensive test suite with pytest
 
 ## Features
 
