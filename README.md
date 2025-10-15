@@ -98,18 +98,6 @@ Once the backend is running, interactive API documentation is available at:
 - Swagger UI: `http://localhost:8000/docs`
 - ReDoc: `http://localhost:8000/redoc`
 
-## Testing
-
-Run the test suite:
-```bash
-pytest
-```
-
-Run with coverage:
-```bash
-pytest --cov=app
-```
-
 ## API Endpoints
 
 ### Authentication
