@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
+from typing import List
 from app.database import get_db
 from app import models, schemas
 from app.auth.dependencies import require_admin
@@ -64,7 +65,7 @@ def delete_product(
 
 
 # ------------------ GET ALL PRODUCTS ------------------ #
-@router.get("/products", response_model=list[schemas.ProductOut])
+@router.get("/products", response_model=List[schemas.ProductOut])
 def get_all_products(
     db: Session = Depends(get_db),
     admin_user = Depends(require_admin)

@@ -38,3 +38,8 @@ Thumbs.db
 .pytest_cache/
 dist/
 build/
+test.db
+ecommerce.db
+*.db
+htmlcov/
+.coverage

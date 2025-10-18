@@ -27,6 +27,9 @@ A full-stack e-commerce solution built with FastAPI and React, featuring user au
 - Comprehensive error handling
 - API documentation with Swagger/OpenAPI
 - CORS support for frontend integration
+- **Comprehensive test suite** with 86+ tests
+- **CI/CD pipeline** with GitHub Actions
+- **Test coverage** for all endpoints and functionality
 
 ## Quick Start
 
@@ -79,6 +82,48 @@ A full-stack e-commerce solution built with FastAPI and React, featuring user au
    npm run dev
    ```
 
+## Testing
+
+### Running Tests
+
+The project includes a comprehensive test suite with **86+ tests** covering all functionality:
+
+```bash
+# Run all tests
+python -m pytest tests/ -v
+
+# Run specific test files
+python -m pytest tests/test_auth.py -v
+python -m pytest tests/test_products.py -v
+python -m pytest tests/test_cart.py -v
+python -m pytest tests/test_orders.py -v
+python -m pytest tests/test_admin.py -v
+python -m pytest tests/test_users.py -v
+
+# Run tests with coverage
+python -m pytest tests/ --cov=app --cov-report=html
+
+# Quick test run
+python -m pytest tests/ -q
+```
+
+### Test Coverage
+
+- **Authentication**: User registration, login, JWT validation
+- **Products**: CRUD operations, authorization, validation
+- **Shopping Cart**: Add/remove items, quantity updates, isolation
+- **Orders**: Checkout process, Stripe integration, stock validation
+- **Admin**: Product management, authorization, data validation
+- **Users**: Profile management, security, edge cases
+
+### CI/CD
+
+Tests run automatically on every push and pull request via GitHub Actions:
+- **Automated testing** on all branches
+- **Prevents broken code** from merging
+- **Fast feedback** for developers
+- **Professional development workflow**
+
 ## Configuration
 
 ### Environment Variables
@@ -114,10 +159,41 @@ Once the backend is running, interactive API documentation is available at:
 ### Cart & Orders
 - `GET /cart/` - Get user cart
 - `POST /cart/add` - Add item to cart
-- `PUT /cart/update` - Update cart item
-- `DELETE /cart/remove` - Remove cart item
-- `POST /orders/` - Create order
-- `GET /orders/` - List user orders
+- `DELETE /cart/{product_id}` - Remove cart item
+- `POST /orders/checkout` - Create order
+- `GET /orders/success` - Payment success
+- `GET /orders/cancel` - Payment cancel
+
+### Admin
+- `GET /admin/products` - List all products (admin)
+- `POST /admin/products` - Create product (admin)
+- `PUT /admin/products/{id}` - Update product (admin)
+- `DELETE /admin/products/{id}` - Delete product (admin)
+
+## Development
+
+### Project Structure
+```
+├── app/                    # FastAPI application
+│   ├── auth/              # Authentication logic
+│   ├── routes/             # API endpoints
+│   ├── models.py          # Database models
+│   ├── schemas.py          # Pydantic schemas
+│   └── database.py         # Database configuration
+├── tests/                  # Test suite (86+ tests)
+├── frontend/               # React application
+├── .github/workflows/      # CI/CD pipeline
+└── requirements.txt        # Python dependencies
+```
+
+### Contributing
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Run tests**: `python -m pytest tests/ -v`
+4. **Commit changes**: `git commit -m 'Add amazing feature'`
+5. **Push to branch**: `git push origin feature/amazing-feature`
+6. **Open a Pull Request**
 
 ## License
 

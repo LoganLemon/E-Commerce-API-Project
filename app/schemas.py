@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
+from typing import Union, List
 
 class UserCreate(BaseModel):
     username: str
@@ -22,7 +23,7 @@ class UserLogin(BaseModel):
 
 class ProductBase(BaseModel):
     name: str
-    description: str | None = None
+    description: Union[str, None] = None
     price: float
     quantity: int
 
@@ -62,7 +63,7 @@ class OrderOut(BaseModel):
     id: int
     total_price: float
     created_at: datetime
-    items: list[OrderItemOut]
+    items: List[OrderItemOut]
 
     class Config:
         from_attributes = True
@@ -74,10 +75,10 @@ class ProductCreate(BaseModel):
     quantity: int
 
 class ProductUpdate(BaseModel):
-    name: str | None = None
-    description: str | None = None
-    price: float | None = None
-    quantity: int | None = None
+    name: Union[str, None] = None
+    description: Union[str, None] = None
+    price: Union[float, None] = None
+    quantity: Union[int, None] = None
 
 class ProductOut(BaseModel):
     id: int

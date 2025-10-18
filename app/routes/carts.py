@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
+from typing import List
 from app import models, schemas
 from app.database import get_db
 from app.auth.dependencies import get_current_user
@@ -35,7 +36,7 @@ def add_to_cart(
     db.refresh(cart_item)
     return cart_item
 
-@router.get("/", response_model=list[schemas.CartItemOut])
+@router.get("/", response_model=List[schemas.CartItemOut])
 def view_cart(
     db: Session = Depends(get_db),
     current_user: models.User = Depends(get_current_user)
