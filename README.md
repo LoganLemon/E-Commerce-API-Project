@@ -185,16 +185,6 @@ Once the backend is running, interactive API documentation is available at:
 ├── .github/workflows/      # CI/CD pipeline
 └── requirements.txt        # Python dependencies
 ```
-
-### Contributing
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Run tests**: `python -m pytest tests/ -v`
-4. **Commit changes**: `git commit -m 'Add amazing feature'`
-5. **Push to branch**: `git push origin feature/amazing-feature`
-6. **Open a Pull Request**
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
